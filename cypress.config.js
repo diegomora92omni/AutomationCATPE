@@ -19,7 +19,7 @@ module.exports = defineConfig({
   fixturesFolder: 'cypress/fixtures',
   supportFolder: 'cypress/support',
   e2e: {
-    baseUrl: 'https://mcstaging.merrell.com.pe/merrell_peru_store_view/',
+    baseUrl: 'https://mcstaging.catlifestyle.pe/cat_peru_store_view/',
     chromeWebSecurity: false,
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);

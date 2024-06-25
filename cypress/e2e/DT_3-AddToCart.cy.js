@@ -210,15 +210,13 @@ describe('Test cases for Add To Cart flow', () => {
                 }
               });
               
-                // Selecciona el botón de incremento de cantidad
-                cy.get('.qty-counter-group__button--increase').then($button => {
-                // Genera un número aleatorio entre 1 y 3
-                const clickCount = Math.floor(Math.random() * 3) + 1;
-                // Realiza clic en el botón la cantidad de veces generada
-                for (let i = 0; i < clickCount; i++) {
-                cy.wrap($button).click();
-                }
-                });
+            // Selecciona la lista desplegable de cantidad
+            cy.get('select.qty-counter-group__select').then($select => {
+            // Genera un número aleatorio entre 1 y 10 (asumiendo que las opciones van de 1 a 10)
+            const randomOption = Math.floor(Math.random() * 10) + 1;
+            // Selecciona la opción generada
+            cy.wrap($select).select(randomOption.toString());
+            });
            
             // Agrega el producto al carrito
             cy.get('#product-addtocart-button').click();
@@ -248,8 +246,9 @@ describe('Test cases for Add To Cart flow', () => {
             
         });
 
+        //NO HAY BOTON DE SEGUIIR COMPRANDO
         //Verificar que permita añadir un Producto al Carrito y Continuar Comprando - Guest
-        it('ADDP-005: Verify that you can add a Product to Cart and Continue Shopping - Guest', () => {
+        it.skip('ADDP-005: Verify that you can add a Product to Cart and Continue Shopping - Guest', () => {
             // Selecciona una categoría de manera aleatoria
             cy.selectRandomCategory();
 
@@ -336,10 +335,10 @@ describe('Test cases for Add To Cart flow', () => {
             // Hacer clic en el enlace "Agregar a Favoritos" usando la clase y el atributo data-action
             cy.get('a.action.towishlist').click();
   
-            cy.wait(8000)
+            cy.wait(5000)
 
             // Verifica que la URL actual incluya el path específico
-            cy.url().should('include', '/merrell_peru_store_view/customer/account/login/');    
+            cy.url().should('include', '/cat_peru_store_view/customer/account/login/');    
 
             // Verificar que el mensaje de error contiene el texto esperado
             cy.get('.message-error').should('contain', 'Debes iniciar sesión o registrarte para agregar artículos a tu lista de deseos.');
@@ -535,15 +534,13 @@ describe('Test cases for Add To Cart flow', () => {
                 }
               });
               
-                // Selecciona el botón de incremento de cantidad
-                cy.get('.qty-counter-group__button--increase').then($button => {
-                    // Genera un número aleatorio entre 1 y 3
-                    const clickCount = Math.floor(Math.random() * 3) + 1;
-                    // Realiza clic en el botón la cantidad de veces generada
-                    for (let i = 0; i < clickCount; i++) {
-                    cy.wrap($button).click();
-                    }
-                    });
+            // Selecciona la lista desplegable de cantidad
+            cy.get('select.qty-counter-group__select').then($select => {
+                // Genera un número aleatorio entre 1 y 10 (asumiendo que las opciones van de 1 a 10)
+                const randomOption = Math.floor(Math.random() * 10) + 1;
+                // Selecciona la opción generada
+                cy.wrap($select).select(randomOption.toString());
+                });
 
             // Agrega el producto al carrito
             cy.get('#product-addtocart-button').click();
@@ -572,8 +569,10 @@ describe('Test cases for Add To Cart flow', () => {
             cy.get('.message-success').should('be.visible');
             
         });
+        
+        //NO HAY BOTON PARA SEGUIR COMPRANDO
         //Verificar que permita añadir un Producto al Carrito y Continuar Comprando - Login
-        it('ADDP-011: Verify that you can add a Product to Cart and Continue Shopping - Login', () => {
+        it.skip('ADDP-011: Verify that you can add a Product to Cart and Continue Shopping - Login', () => {
 
             // Iniciar sesión utilizando el comando personalizado 'login'
             cy.login(usuarios[0].email, usuarios[0].password);

@@ -103,8 +103,9 @@ describe('Test cases for Cart flow', () => {
            // Verifica si se muestra el mensaje de éxito
            cy.get('.message-success').should('be.visible');
 
-            // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+           //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
+           //Selecciona el enlace 'Mi Carro' y haz clic en él
+            //cy.get('a.action.showcart').click();
 
             // Selecciona el enlace 'Ver todo el carro' y haz clic en él
             cy.get('a.action.viewcart').click();
@@ -120,7 +121,7 @@ describe('Test cases for Cart flow', () => {
 
 
            // Verifica que la URL actual incluya el path específico
-           cy.url().should('include', '/merrell_peru_store_view');
+           cy.url().should('include', '/cat_peru_store_view');
            
        });
 
@@ -201,8 +202,9 @@ describe('Test cases for Cart flow', () => {
             // Verifica si se muestra el mensaje de éxito
             cy.get('.message-success').should('be.visible');
 
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
             // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //cy.get('a.action.showcart').click();
 
             // Selecciona el enlace 'Ver todo el carro' y haz clic en él
             cy.get('a.action.viewcart').click();
@@ -211,7 +213,7 @@ describe('Test cases for Cart flow', () => {
             cy.url().should('include', '/checkout/cart/');
 
             // Hacer clic en el botón para reducir la cantidad
-            cy.get('button[title="Reduce the quantity"]').first().click();
+            cy.get('button[title="Reduce the quantity"]').should('be.visible').and('not.be.disabled').first().click({ force: true });
 
         });
 
@@ -289,8 +291,9 @@ describe('Test cases for Cart flow', () => {
             // Verifica si se muestra el mensaje de éxito
             cy.get('.message-success').should('be.visible');
 
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
             // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //cy.get('a.action.showcart').click();
 
             // Selecciona el enlace 'Ver todo el carro' y haz clic en él
             cy.get('a.action.viewcart').click();
@@ -298,8 +301,10 @@ describe('Test cases for Cart flow', () => {
             // Verifica que la URL actual incluya el path específico
             cy.url().should('include', '/checkout/cart/');
 
+            cy.wait(5000)
+
             // Hacer clic en el botón para reducir la cantidad
-            cy.get('button[title="Increase the quantity"]').first().click();
+            cy.get('button[title="Increase the quantity"]').should('be.visible').and('not.be.disabled').first().click({ force: true });
 
         });
 
@@ -380,8 +385,9 @@ describe('Test cases for Cart flow', () => {
             // Verifica si se muestra el mensaje de éxito
             cy.get('.message-success').should('be.visible');
 
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
             // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //cy.get('a.action.showcart').click();
 
             // Selecciona el enlace 'Ver todo el carro' y haz clic en él
             cy.get('a.action.viewcart').click();
@@ -477,8 +483,9 @@ describe('Test cases for Cart flow', () => {
             // Verifica si se muestra el mensaje de éxito
             cy.get('.message-success').should('be.visible');
 
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
             // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //cy.get('a.action.showcart').click();
 
             // Selecciona el enlace 'Ver todo el carro' y haz clic en él
             cy.get('a.action.viewcart').click();

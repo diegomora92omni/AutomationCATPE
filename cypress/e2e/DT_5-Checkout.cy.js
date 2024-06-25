@@ -103,8 +103,9 @@ describe('Test cases for Cart flow', () => {
            // Verifica si se muestra el mensaje de éxito
            cy.get('.message-success').should('be.visible');
 
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
             // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //cy.get('a.action.showcart').click();
 
             // Hacer clic en el botón 'Proceder al pago'
             cy.get('#top-cart-btn-checkout').click();
@@ -440,8 +441,9 @@ describe('Test cases for Cart flow', () => {
             // Verifica si se muestra el mensaje de éxito
             cy.get('.message-success').should('be.visible');
  
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
             // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //cy.get('a.action.showcart').click();
 
             // Hacer clic en el botón 'Proceder al pago'
             cy.get('#top-cart-btn-checkout').click();
@@ -623,8 +625,9 @@ describe('Test cases for Cart flow', () => {
             // Verifica si se muestra el mensaje de éxito
             cy.get('.message-success').should('be.visible');
  
-                         // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+            //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
+            // Selecciona el enlace 'Mi Carro' y haz clic en él
+            //cy.get('a.action.showcart').click();
 
             // Hacer clic en el botón 'Proceder al pago'
             cy.get('#top-cart-btn-checkout').click();
@@ -781,8 +784,9 @@ describe('Test cases for Cart flow', () => {
              // Verifica si se muestra el mensaje de éxito
              cy.get('.message-success').should('be.visible');
   
-                                       // Selecciona el enlace 'Mi Carro' y haz clic en él
-            cy.get('a.action.showcart').click();
+                                       //POP UP CARRITO SE ABRE INMEDIATAMENTE CUANDO AGREGO AL CARRITO 
+            // Selecciona el enlace 'Mi Carro' y haz clic en él
+            //cy.get('a.action.showcart').click();
 
             // Hacer clic en el botón 'Proceder al pago'
             cy.get('#top-cart-btn-checkout').click();
